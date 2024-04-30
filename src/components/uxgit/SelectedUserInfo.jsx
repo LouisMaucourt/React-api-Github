@@ -7,8 +7,8 @@ const SelectedUserInfo = ({ user }) => {
 
     const fetchRepos = async () => {
         if (!user || !user.login) return;
-
         setIsLoading(true);
+
         const response = await fetch(`https://api.github.com/users/${user.login}/repos`);
         const data = await response.json();
         setRepos(data);
